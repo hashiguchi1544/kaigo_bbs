@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
-  resources :posts
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  devise_for :users
+  root to: 'posts#index'
+  resources :posts do
+    resources :comments, only: [:create, :destroy]
+  end
+  resources :users, only: :show
 end

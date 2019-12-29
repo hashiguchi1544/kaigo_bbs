@@ -5,5 +5,30 @@
   <%= @post.title %>
 </p>
 
+<%= @post.content%>
+
+<div class="container">
+  <% if current_user %>
+    <%= form_with(model: [@post, @comment], local: true) do |form| %>
+      <%= form.text_area :text, placeholder: "コメントする", rows: "2" %>
+      <%= form.submit "SEND" %>
+    <% end %>
+  <% else %>
+    <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
+  <% end %>
+  <div class="comments">
+    <h4>＜コメント一覧＞</h4>
+    <% if @comments %>
+      <% @comments.each do |comment| %>
+        <p>
+          <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
+          <%= comment.text %>
+          <%= link_to 'Destroy', post_comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </p>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
