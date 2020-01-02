@@ -1,10 +1,26 @@
-<div class="contents row">
-  <p><%= @nickname %>さんの投稿一覧</p>
-  <% @posts.each do |post| %>
-    <div class="content_post">
-      <span class="name"><%= post.title %></span>
-      <%= post.content %>
-      <hr>
-    </div>
-  <% end %>
+
+<div class="mypage">
+  <h2><%= @nickname %>さんのマイページ</h2>
+  <div class="mypage__mypage-name">
+    投稿一覧
+  </div>
+  <div class="mypage__mypage-posts">
+    <% @posts.each do |post| %>
+      <div class="mypage__mypage-posts__mypage-each">
+        <%= link_to "#{post.title}", post %>
+      </div>
+    <% end %>
+  </div>
+
+  <hr>
+  <div class="mypage__mypage-name">
+    コメントした記事一覧
+  </div>
+  <div class="mypage__mypage-posts">
+    <% @comments.each do |comment| %>
+      <div class="mypage__mypage-posts__mypage-each">
+        <%= link_to "#{comment.text}", post_path(comment.post_id)  %>
+      </div>
+    <% end %>
+  </div>
 </div>
