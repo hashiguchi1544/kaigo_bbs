@@ -11,26 +11,58 @@
 
   <body>
     <header>
-      <% if user_signed_in? %>
-          <div class="user_nav grid-6">
-            <span><%= current_user.nickname %>
-              <ul class="user__info">
-                <li>
-                  <%= link_to "マイページ", "/users/#{current_user.id}" %>
-                  <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-                </li>
-              </ul>
-            </span>
-            <%= link_to  "投稿する", "/posts/new", class: "post" %>
+      <div class="nav-box">
+        <div class="nav-box__nav-left">
+          <div class="nav-box__nav-left__nav-genre">
+            <%= link_to root_path , class: 'navi-post', method: :get do %>
+            <i class="fa fa-home fa-3x"></i>
+            <% end %>
           </div>
+          <div class="nav-box__nav-left__nav-genre">
+            <%= link_to "介護お悩み掲示板", root_path , class: 'navi-post' %>
+          </div>
+          <div class="nav-box__nav-left__nav-genre">
+            <%= link_to "転職・スキルアップ", '#', class: 'navi-post' %>
+          </div>
+          <div class="nav-box__nav-left__nav-genre">
+            <%= link_to "技能実習生関連", '#', class: 'navi-post' %>
+          </div>
+        </div>
+
+        <% if user_signed_in? %>
+          <div class="nav-box__nav-right">
+            <div class="nav-box__nav-right__nav-info">
+              <%= link_to "新規投稿", new_post_path, class: 'right_side' %>
+            </div>
+            <div class="nav-box__nav-right__nav-info">
+              <%= link_to "マイページ", "/users/#{current_user.id}", class: 'right_side' %>
+            </div>
+            <div class="nav-box__nav-right__nav-info">
+              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'right_side' %>
+            </div>
+            <div class="nav-box__nav-right__nav-info">
+              <%= link_to "お問い合わせ", '#', class: 'right_side' %>
+            </div>
+          </div>
+
         <% else %>
-          <div class="grid-6">
-            <%= link_to "ログイン", new_user_session_path, class: 'post' %>
-            <%= link_to "新規登録", new_user_registration_path, class: 'post' %>
+        <div class="nav-box__nav-right">
+          <div class="nav-box__nav-right__nav-info">
+            <%= link_to "新規登録", new_user_registration_path, class: 'right_side' %>
           </div>
+          <div class="nav-box__nav-right__nav-info">
+            <%= link_to "ログイン", new_user_session_path, class: 'right_side' %>
+          </div>
+          <div class="nav-box__nav-right__nav-info">
+            <%= link_to "お問い合わせ", '#', class: 'right_side' %>
+          </div>
+        </div>
         <% end %>
+      </div>
     </header>
     
-    <%= yield %>
+    <div class="main_contents">
+      <%= yield %>
+    </div>
   </body>
 </html>
