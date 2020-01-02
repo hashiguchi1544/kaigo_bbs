@@ -10,6 +10,7 @@
 
 <hr>
 
+
 <div class="post-contents">
   <table class="table table-hover">
     <thead>
@@ -26,9 +27,9 @@
         <tr>
           <td><%= post.id %></td>
           <td>介護お悩み</td>
-          <td class="th-length"><%= post.title %></td>
+          <td class="th-length"><%= link_to "#{post.title}", post %></td>
           <td><%= post.user.nickname %></td>
-          <td>投稿日時</td>
+          <td><%= post.created_at.strftime("%Y/%m/%d %H:%M") %></td>
         </tr>
       <% end %>
     </tbody>
@@ -42,33 +43,3 @@
 <br>
 
 
-
-
-<hr>
-<p id="notice"><%= notice %></p>
-<h1>Posts</h1>
-<table class="table">
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.title %></td>
-        <td><%= link_to 'Show', post %></td>
-          <% if user_signed_in? && current_user.id == post.user_id %>
-            <td><%= link_to 'Edit', edit_post_path(post) %></td>
-            <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'このコメントを削除しても大丈夫でしょうか？' } %></td>
-          <% end %>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Post', new_post_path %>
