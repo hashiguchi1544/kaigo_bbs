@@ -92,6 +92,8 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    enum_help (0.0.17)
+      activesupport (>= 3.0.0)
     erubi (1.9.0)
     execjs (2.7.0)
     ffi (1.11.3)
@@ -284,10 +286,12 @@ DEPENDENCIES
   cancancan
   capybara (>= 2.15)
   devise
+  enum_help
   font_awesome5_rails
   image_processing (~> 1.2)
   jbuilder (~> 2.7)
   jquery-rails
+  kaminari
   listen (>= 3.0.5, < 3.2)
   mysql2 (>= 0.4.4)
   puma (~> 4.1)

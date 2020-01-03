@@ -6,6 +6,7 @@
     <div class="post-box__post-title"><h4><%= @post.title %></h2></div>
     <div class="post-box__post-id">ID：<%= @post.id %></div>
     <div class="post-box__post-name">投稿者：<%= @post.user.nickname %></div>
+    <div class="post-box__post-name">ジャンル：<%= @post.genre_i18n %></div>
     <div class="post-box__post-name">投稿日時：<%= @post.created_at.strftime("%Y/%m/%d %H:%M") %></div>
     <% if user_signed_in? && current_user.id == @post.user_id %>
       <div class="post-box__post-name"><%= link_to '投稿削除', post_path(@post.id), method: :delete, data: { confirm: '本当にコメントを削除してもよろしいでしょうか?' } %></div>
@@ -20,7 +21,7 @@
           <div class="form-group">
             <%= form.text_area :text, placeholder: "ここにコメントを入力してください", rows: "5", class: "form-control" %>
           </div>
-          <%= form.submit "SEND" , class: "btn btn-primary rounded-pill"%>
+          <%= form.submit "投稿" , class: "btn btn-primary rounded-pill"%>
         <% end %>
       <% else %>
         <p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p>

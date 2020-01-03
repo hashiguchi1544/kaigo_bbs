@@ -49,7 +49,6 @@ header {
       display: flex;
       justify-content: flex-end;
       &__nav-info{
-        // margin-left: 15px;
         line-height: 1;
         width: 110px;
         font-size: 16px;
@@ -121,19 +120,16 @@ header {
 
 .post-contents{
   margin-top: 50px;
-}
-
-.th-length{
-  width: 600px;
-  a {
-    display:block;
-    width: 100%;
-    height: 100%;
-    &:hover{
-      text-decoration: none;
-    }
+  h1{
+    font-size:20px;
+  }
+  p{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-size: 14px;
   }
 }
+
 
 .show-contents{
   margin-top: 80px;
@@ -182,5 +178,12 @@ header {
         }
       }
     }
+  }
+}
+
+.mypage{
+  width:100%;
+  h2 {
+    margin-bottom:30px;
   }
 }

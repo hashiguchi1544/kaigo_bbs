@@ -1,0 +1,7 @@
+ja:
+  enums:
+    post:
+      genre:
+        worry: "介護お悩み"
+        skill: "転職・スキルアップ"
+        foreign: "技能実習生関連"

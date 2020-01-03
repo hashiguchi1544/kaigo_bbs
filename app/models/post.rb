@@ -3,4 +3,6 @@ class Post < ApplicationRecord
   belongs_to :user
 
   has_many :comments
+
+  enum genre: { worry: 0, skill: 1, foreign: 2 }
 end
