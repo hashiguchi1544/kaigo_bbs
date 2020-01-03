@@ -2,4 +2,7 @@
   <h1>介護お悩み</h1>
   <p>このページではすべての投稿から、ジャンルが「介護お悩み」だけを表示しています。</p>
   <%= render partial: 'shared/index', locals: { posts: @posts}%>
+  <div class="post-contents__post-paginate">
+    <%= paginate(@posts) %>
+  </div>
 </div>

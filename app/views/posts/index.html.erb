@@ -13,13 +13,7 @@
 
 <div class="post-contents">
   <%= render partial: 'shared/index', locals: { posts: @posts}%>
-  <%= paginate(@posts) %>
+  <div class="post-contents__post-paginate">
+    <%= paginate(@posts) %>
+  </div>
 </div>
-
-
-<br>
-<br>
-<br>
-<br>
-
-
