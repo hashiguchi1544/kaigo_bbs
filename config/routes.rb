@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   end
   resources :users, only: :show
   resources :worrys, only: :index
+  resources :skills, only: :index
 end
