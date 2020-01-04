@@ -1,0 +1,15 @@
+.notification {
+  font-size: 22px;
+  margin-bottom: 40px;
+  .notice {
+    border-bottom: 3px solid #637e94;
+    color: rgb(31, 31, 31);
+    text-align: center;
+  }
+
+  .alert {
+    border-bottom: 5px solid #946663;
+    color: rgb(31, 31, 31)k;
+    text-align: center;
+  }
+}

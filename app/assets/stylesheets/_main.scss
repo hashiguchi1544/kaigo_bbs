@@ -14,7 +14,7 @@ header {
     margin: 0 50px;
     &__nav-left{
       height: 50px;
-      width: 45%;
+      width: 55%;
       display: flex;
       &__nav-genre{
         margin-left: 15px;
@@ -31,7 +31,9 @@ header {
           width: 100%;
           height: 100%;
           z-index: 3;
-          line-height: 50px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
           text-decoration: none;
           &:visited{
             color: #252424
@@ -45,7 +47,7 @@ header {
     }
     &__nav-right{
       height: 50px;
-      width: 55%;
+      width: 45%;
       display: flex;
       justify-content: flex-end;
       &__nav-info{
@@ -196,4 +198,8 @@ header {
   &__table-title{
     font-size:16px;
   }
+}
+
+.top-notice{
+  margin-bottom:40px;
 }

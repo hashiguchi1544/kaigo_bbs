@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 
 <div class="show-contents">
   <div class="post-box">
@@ -10,7 +8,7 @@
     <div class="post-box__post-name">投稿日時：<%= @post.created_at.strftime("%Y/%m/%d %H:%M") %></div>
     <% if user_signed_in? && current_user.id == @post.user_id %>
       <div class="post-box__post-delete"><%= link_to '投稿削除', post_path(@post.id), method: :delete, data: { confirm: '本当にコメントを削除してもよろしいでしょうか?' } %></div>
-      <div class="post-box__post-edit"><%= link_to 'Edit', edit_post_path(@post) %></div>
+      <div class="post-box__post-edit"><%= link_to '編集', edit_post_path(@post) %></div>
     <% end %>  
     <div class="post-box__post-text"><%= @post.content %></div>
   </div>
@@ -46,7 +44,3 @@
     </div>
   </div>
 </div>
-
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
