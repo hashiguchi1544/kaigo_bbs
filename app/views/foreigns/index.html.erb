@@ -1,0 +1,8 @@
+<div class="post-contents">
+  <h1>技能実習生関連</h1>
+  <p>このページではすべての投稿から、ジャンルが「技能実習生」だけを表示しています。</p>
+  <%= render partial: 'shared/index', locals: { posts: @posts}%>
+  <div class="post-contents__post-paginate">
+    <%= paginate(@posts) %>
+  </div>
+</div>

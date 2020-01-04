@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   resources :users, only: :show
   resources :worrys, only: :index
   resources :skills, only: :index
+  resources :foreigns, only: :index
 end
