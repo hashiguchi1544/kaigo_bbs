@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: kaigo_bbs_production
-  username: kaigo_bbs
-  password: <%= ENV['KAIGO_BBS_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
