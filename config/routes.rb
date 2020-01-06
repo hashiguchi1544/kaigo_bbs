@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   resources :worrys, only: :index
   resources :skills, only: :index
   resources :foreigns, only: :index
+  resources :inquirys, only: :index
 end

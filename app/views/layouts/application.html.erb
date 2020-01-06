@@ -41,7 +41,7 @@
               <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'right_side' %>
             </div>
             <div class="nav-box__nav-right__nav-info">
-              <%= link_to "お問い合わせ", '#', class: 'right_side' %>
+              <%= link_to "お問い合わせ", inquirys_path, class: 'right_side' %>
             </div>
           </div>
 
@@ -54,7 +54,7 @@
             <%= link_to "ログイン", new_user_session_path, class: 'right_side' %>
           </div>
           <div class="nav-box__nav-right__nav-info">
-            <%= link_to "お問い合わせ", '#', class: 'right_side' %>
+            <%= link_to "お問い合わせ", inquirys_path, class: 'right_side' %>
           </div>
           <div class="nav-box__nav-right__nav-info">
             <%= link_to "管理画面", "/admin", class: 'right_last' %>
