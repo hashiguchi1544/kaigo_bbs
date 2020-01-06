@@ -1,18 +1,20 @@
 <%= form_with(model: post, local: true) do |form| %>
-  <% if post.errors.any? %>
-    <div id="error_explanation" class="top-notice">
-      <h2><%= pluralize(post.errors.count, "エラー！") %> 保存できていません。再トライしてください。</h2>
+  <div class="error-box">
+    <% if post.errors.any? %>
+      <div id="error_explanation" class="top-notice">
+        <h2><%= pluralize(post.errors.count, "エラー！") %> 保存できていません。再トライしてください。</h2>
+  
+        <ul>
+          <% post.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  </div>
 
-      <ul>
-        <% post.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="form-group">
-    <%= form.label :title %>
+  <div class="form-group form-title">
+    <%= form.label :title  %>
     <%= form.text_field :title %>
   </div>
 
