@@ -1,24 +1,27 @@
-# README
+# リポジトリ名
+https://github.com/hashiguchi1544/kaigo_bbs
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 目的
+自分が従事している業界の役に立てばと思い作成した。
 
-Things you may want to cover:
+Ruby on Rails 6 の使用方法の学習目的が主だったために、実用までには至っていない。
 
-* Ruby version
+## 作成したサイトについて
+サイトデザインは極力シンプルで見やすいものとした。
 
-* System dependencies
+福祉業界の関連した掲示板で、３つのジャンルのページを用意した。
 
-* Configuration
+## URL
+https://kaigo-bbs.herokuapp.com/
 
-* Database creation
+herokuの利用枠を使用しているために、サイトアクセス後に表示されるまでに時間がかかります。
 
-* Database initialization
+## 学習したもの
+Ruby on rails6による実装
+- ログイン機能
+- ページネーション
+- コメント投稿・削除・マイページ・お気に入り登録機能
+- お問い合わせは、google formを利用
+- scss, haml を使用
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+HTML, CSS(SCSS), JavaScript, Ruby on Rails6
